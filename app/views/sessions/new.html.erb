@@ -1,14 +1,38 @@
-<h1>Login</h1>
-<%= form_for(:reviewer, url: sessions_path) do |f| %>
-  <div class="field"><%= f.label :name %> <br/>
-    <%= f.text_field :name %>
+<br><br>
+  <%= form_for(:reviewer, url: sessions_path) do |f| %>
+  <div class="row  center-align col s4">
+    <div class="col s4 ">
+      <h2></h2>
+    </div>
+    <div class="col s4 z-depth-4 card-panel">
+      <form class="login-form">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <p class="center login-form-text"><h1>Login</h1></p>
+          </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-social-person-outline prefix"></i>
+                <%= f.text_field :name, :placeholder => "Name" %>
+
+            </div>
+        </div>
+        <div class="row margin">
+          <div class="input-field col s12">
+            <i class="mdi-action-lock-outline prefix"></i>
+
+            <%= f.password_field :password, :placeholder => "Password" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <div class="actions">
+              <%= f.submit "Login",  class:"waves-effect waves-light btn"%>
+            </div>
+           </div>
+        </div>
+      </form>
+    </div>
   </div>
-  <p/>
-  <div class="field">
-    <%= f.label :password %> <br/>
-    <%= f.password_field :password %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Login" %>
-  </div>
-<% end %>
+  <% end %>

@@ -11,15 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br>
-    <%= f.text_field :author %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br><br>
+    <div class="row  center-align col s4">
+      <div class="col s4 ">
+        <h2></h2>
+      </div>
+      <div class="col s4 z-depth-4 card-panel">
+        <form class="login-form">
+          <div class="row">
+            <div class="input-field col s12 center">
+              <p class="center login-form-text"><h2 class="gray-text">New Book</h2></p>
+            </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-av-my-library-books prefix"></i>
+
+                  <%= f.text_field :name, :placeholder => "Title" %>
+
+              </div>
+          </div>
+          <div class="row margin">
+            <div class="input-field col s12">
+              <i class="mdi-social-person-outline prefix"></i>
+
+              <%= f.text_field :author, :placeholder => "Author" %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <div class="actions">
+                <%= f.submit "Save",  class:"waves-effect waves-light btn"%>
+              </div>
+             </div>
+             <div class="input-field col s6">
+               <div class="actions">
+                 <%= link_to 'Back', books_path, class:"waves-effect waves-light btn" %>
+               </div>
+
+             </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
 <% end %>
